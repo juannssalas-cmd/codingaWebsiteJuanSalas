@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>experiment</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+	<body class="experiments-page">
+	
+	
+	<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="images/lmao.png">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">ABOUT</a></li>
+    <li><a href="work.html">WORK</a></li>
+    <li><a href="toolkit.html">TOOLKIT</a></li>
+    <li><a href="experiment.html"class="active">EXPERIMENT </a></li>
+  </ul>
+</nav>
+	
+	
+<div class="interactive-pizza">
+
+  <button class="pizza-piece" style="--i: 0" aria-label="Slice 1">
+    <img src="images/YUM.png" alt="">
+  </button>
+
+  <button class="pizza-piece" style="--i: 1" aria-label="Slice 2">
+    <img src="images/YUM.png"images/yummy.png"" alt="">
+  </button>
+
+  <button class="pizza-piece" style="--i: 2" aria-label="Slice 3">
+    <img src="images/YUM.png" alt="">
+  </button>
+
+  <button class="pizza-piece" style="--i: 3" aria-label="Slice 4">
+    <img src="images/YUM.png" alt="">
+  </button>
+
+  <button class="pizza-piece" style="--i: 4" aria-label="Slice 5">
+    <img src="images/YUM.png" alt="">
+  </button>
+
+  <button class="pizza-piece" style="--i: 5" aria-label="Slice 6">
+    <img src="images/YUM.png" alt="">
+  </button>
+
+  <button class="pizza-piece" style="--i: 6" aria-label="Slice 7">
+    <img src="images/YUM.png" alt="">
+  </button>
+
+  <button class="pizza-piece" style="--i: 7" aria-label="Slice 8">
+    <img src="images/YUM.png" alt="">
+  </button>
+
+	
+</div>
+
+<p id="pizza-message">Hover over a slice!</p>
+
+<script>
+  const pizzaPieces = document.querySelectorAll(".pizza-piece");
+  const pizzaMessage = document.getElementById("pizza-message");
+
+  pizzaPieces.forEach((piece, index) => {
+    piece.addEventListener("mouseenter", () => {
+      pizzaMessage.textContent =
+        "Slice " + (index + 1) + " looks delicious!";
+    });
+
+    piece.addEventListener("click", () => {
+      pizzaPieces.forEach(slice => {
+        slice.classList.remove("selected");
+        slice.setAttribute("aria-pressed", "false");
+      });
+
+      piece.classList.add("selected");
+      piece.setAttribute("aria-pressed", "true");
+
+      pizzaMessage.textContent =
+        "You picked slice " + (index + 1) + "!";
+    });
+
+    piece.setAttribute("aria-pressed", "false");
+  });
+</script>
+	
+	<section class="experiment-links">
+    <h2>Explore More</h2>
+
+   
+    <div class="button-group">
+        <button class="experiment-btn" onclick="window.location.href='work.html'">
+            You hungry??
+        </button>
+
+        <button class="experiment-btn second-btn" onclick="window.location.href='about.html'">
+            Dessert??
+        </button>
+    </div>
+
+		<br>
+   
+    <div class="link-group">
+        <a href="https://www.loumalnatis.com/ target="_blank">
+            My personal best pizza
+        </a>
+
+			<br>
+															 
+        <a href="https://www.rosatispizza.com/" target="_blank">
+            My personal worst pizza 
+        </a>
+    </div>
+</section>
+	
+	
+	
+	
+	
+	
+</body>
+</html>
